@@ -1,0 +1,35 @@
+Gwizard
+=======
+
+gwizard is a rails plugin to generate html wizards.
+
+Example
+=======
+
+<html>
+<head>
+<title>wizard</title>
+
+<script src="/javascripts/gwizard.js" >
+</script>
+</head>
+<body>
+<%wizard_for({:steps=>3, :finish_url=>"/"}, {:id=>"helloworld", :class=>"helloworld"}) do |wizard| %>
+<h1><%=wizard.wizard_title%></h1>
+<%wizard.step(1, {:class=>"step1"}) do%>
+<h2>Inside step 1</h2>
+<%end%>
+
+<%wizard.step(2,{:class=>"step2"}) do%>
+<h3>Inside step 2</h3>
+<%end%>
+
+<%wizard.step(3,{:class=>"step3"}) do%>
+<h3>Inside step 3</h3>
+<%end%>
+
+<%end%>
+</body>
+</html>
+
+Copyright (c) 2011 GopalRohra, released under the MIT license
